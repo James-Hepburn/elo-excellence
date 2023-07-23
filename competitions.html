@@ -166,9 +166,9 @@
       );
     }
 
-    function Card({title, date, location, elo, prize, image}) {
+    function Card({title, date, locationValue, elo, prize, image}) {
       const handleButtonClick = () => {
-      const url = `register_competition.html?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}&location=${encodeURIComponent(location)}&elo=${encodeURIComponent(elo)}&prize=${encodeURIComponent(prize)}`;
+      const url = `register_competition.html?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}&locationValue=${encodeURIComponent(locationValue)}&elo=${encodeURIComponent(elo)}&prize=${encodeURIComponent(prize)}`;
         window.location.href = url;
       };
       
@@ -177,7 +177,7 @@
           <img src={image} alt={title}/>
           <h4>{title}</h4>
           <p>{date}</p>
-          <p>{location}</p>
+          <p>{locationValue}</p>
           <p>{elo}</p>
           <p>{prize}</p>
           <button onClick={handleButtonClick}>{"Register"}</button>
@@ -191,7 +191,7 @@
           <Card
             title="CyberKnight's Chess Duels"
             date="Date: Every Monday"
-            location="Location: Virtual arena"
+            locationValue="Location: Virtual arena"
             elo="Elo rating: 1000 to 1750"
             prize="Prize: $25"
             image="images/Competition1.png"
@@ -199,7 +199,7 @@
           <Card
             title="Grandmaster's Chess Showdown"
             date="Date: Every Sunday"
-            location="Location: Virtual arena"
+            locationValue="Location: Virtual arena"
             elo="Elo rating: 2400+"
             prize="Prize: $100"
             image="images/Competition2.png"
