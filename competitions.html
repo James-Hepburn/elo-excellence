@@ -168,7 +168,7 @@
 
     function Card({title, date, location, elo, prize, image}) {
       const handleButtonClick = () => {
-        const url = `register_competition.html?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}&location=${encodeURIComponent(location)}&elo=${encodeURIComponent(elo)}&prize=${encodeURIComponent(prize)}`;
+      const url = `register_competition.html?title=${encodeURIComponent(title)}&date=${encodeURIComponent(date)}&location=${encodeURIComponent(location)}&elo=${encodeURIComponent(elo)}&prize=${encodeURIComponent(prize)}`;
         window.location.href = url;
       };
       
