@@ -84,11 +84,11 @@
     .form-container {
       display: flex;
       justify-content: center;
-      margin-top: 175px;
+      margin-top: 125px;
     }
 
     .form-container form {
-      width: 300px;
+      width: 600px;
     }
 
     .form-container input[type="text"], .form-container input[type="submit"], .form-container input[type="email"], .form-container select {
@@ -110,29 +110,32 @@
       width: 100%;
     }
 
-    .main-text, .sub-text {
+    .text-container {
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      margin-top: 10px; 
+      text-align: center;
+    }
+    
+    .main-text {
+      color: black;
+      font-family: "Roboto", sans-serif;
+      font-size: 1.5vw;
+    }
+    
+    .sub-text {
       color: black;
       font-family: "Roboto", sans-serif;
       font-size: 1vw;
-      left: 50%;
-      position: absolute;
-      text-align: center;
-      transform: translate(-50%, -50%);
-    }
-
-    .main-text {
-      font-size: 1.5vw;
-    }
-
-    .sub-text {
-      font-size: 1vw;
+      margin-top: 5px; 
     }
 
     .map-container {
       display: flex;
       justify-content: center;
       align-items: center;
-      max-width: 300px; 
+      max-width: 600px; 
       margin: 0 auto;
       margin-top: 20px; 
     }
@@ -162,20 +165,23 @@
     <img src="images/Map.png" alt="Map" />
   </div>
 
-  <div class="main-text">Elo Excellence</div>
-  <div class="sub-text">277 Elgin St, Ottawa, ON, K2P 0H7</div>
-  <div class="sub-text">eloexcellence@gmail.com</div>
-  <div class="sub-text">613 - 864 - 2095</div>
+  <div class="text-container">
+    <div class="main-text">Elo Excellence</div>
+    <div class="sub-text">277 Elgin St, Ottawa, ON, K2P 0H7</div>
+    <div class="sub-text">eloexcellence@gmail.com</div>
+    <div class="sub-text">613 - 864 - 2095</div>
+  </div>
 
-  <div class="main-text">Hours</div>
-  <div class="sub-text">Mon. 10:00 a.m. - 5:00 p.m.</div>
-  <div class="sub-text">Tue.   10:00 a.m. - 6:00 p.m.</div>
-  <div class="sub-text">Wed.  10:00 a.m. - 6:00 p.m.</div>
-  <div class="sub-text">Thu.   10:00 a.m. - 6:00 p.m.</div>
-  <div class="sub-text">Fri.     10:00 a.m. - 6:00 p.m.</div>
-  <div class="sub-text">Sat.    10:00 a.m. - 6:00 p.m.</div>
-  <div class="sub-text">Sun.   10:00 a.m. - 5:00 p.m.</div>
-  
+  <div class="text-container">
+    <div class="main-text">Hours</div>
+    <div class="sub-text">Mon. 10:00 a.m. - 5:00 p.m.</div>
+    <div class="sub-text">Tue.   10:00 a.m. - 6:00 p.m.</div>
+    <div class="sub-text">Wed.  10:00 a.m. - 6:00 p.m.</div>
+    <div class="sub-text">Thu.   10:00 a.m. - 6:00 p.m.</div>
+    <div class="sub-text">Fri.     10:00 a.m. - 6:00 p.m.</div>
+    <div class="sub-text">Sat.    10:00 a.m. - 6:00 p.m.</div>
+    <div class="sub-text">Sun.   10:00 a.m. - 5:00 p.m.</div>
+  </div>
   <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
