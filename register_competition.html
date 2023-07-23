@@ -106,7 +106,7 @@
       width: 100%;
     }
 
-    .type, .date, .location, .elo, .prize {
+    .type, .date, .loc, .elo, .prize {
       color: black;
       font-family: "Roboto", sans-serif;
       font-size: 1vw;
@@ -124,7 +124,7 @@
       top: 27%;
     }
 
-    .location {
+    .loc {
       top: 32%;
     }
 
@@ -143,7 +143,7 @@
   <h3 class="header">Competition Registration</h3>
   <h5 class="type" id="type-info"></h5>
   <h5 class="date" id="date-info"></h5>
-  <h5 class="location" id="location-info"></h5>
+  <h5 class="loc" id="loc-info"></h5>
   <h5 class="elo" id="elo-info"></h5>
   <h5 class="prize" id="prize-info"></h5>
   
@@ -163,17 +163,17 @@
     const urlParams = new URLSearchParams(window.location.search);
     const title = urlParams.get('title');
     const date = urlParams.get('date');
-    const location = urlParams.get('locationValue');
+    const loc = urlParams.get('loc');
     const elo = urlParams.get('elo');
     const prize = urlParams.get('prize');
     const typeInfo = document.getElementById('type-info');
     const dateInfo = document.getElementById('date-info');
-    const locationInfo = document.getElementById('location-info');
+    const locInfo = document.getElementById('loc-info');
     const eloInfo = document.getElementById('elo-info');
     const prizeInfo = document.getElementById('prize-info');
     typeInfo.textContent = title;
     dateInfo.textContent = date;
-    locationInfo.textContent = decodeURIComponent(location);
+    locInfo.textContent = loc;
     eloInfo.textContent = elo;
     prizeInfo.textContent = prize;
     
