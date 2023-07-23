@@ -173,7 +173,7 @@
     const prizeInfo = document.getElementById('prize-info');
     typeInfo.textContent = title;
     dateInfo.textContent = date;
-    locationInfo.textContent = location;
+    locationInfo.textContent = decodeURIComponent(location);
     eloInfo.textContent = elo;
     prizeInfo.textContent = prize;
     
