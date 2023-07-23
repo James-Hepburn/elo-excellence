@@ -131,7 +131,37 @@
   <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
   
   <script type="text/babel">
-    function Filters({selectedFilters, onFilterChange}) {
+    function PuzzleContainer({ selectedFilter }) {
+      const filterMapping = {
+        beginner: {
+          image: "images/Beginner.png",
+          title: "White just moved their bishop to b4. How can you take advantage of this mistake?",
+        },
+        intermediate: {
+          image: "images/Intermediate.png",
+          title: "Black is threatening Qxc1+. What would you do?",
+        },
+        advanced: {
+          image: "images/Advanced.png",
+          title: "Black’s queen is threatening to capture your rook on a7. How will you respond?",
+        },
+      };
+
+      if (!selectedFilter) {
+        return null;
+      }
+
+      const { image, title } = filterMapping[selectedFilter];
+
+      return (
+        <div className="puzzle-container">
+          <img src={image} alt="Puzzle" />
+          <h2>{title}</h2>
+        </div>
+      );
+    }
+
+    function Filters({ selectedFilter, onFilterChange }) {
       return (
         <div className="filters">
           <h4>Filter by Category</h4>
@@ -139,7 +169,7 @@
             <input
               type="checkbox"
               value="beginner"
-              checked={selectedFilters.includes("beginner")}
+              checked={selectedFilter === "beginner"}
               onChange={onFilterChange}
             />
             Beginner
@@ -148,7 +178,7 @@
             <input
               type="checkbox"
               value="intermediate"
-              checked={selectedFilters.includes("intermediate")}
+              checked={selectedFilter === "intermediate"}
               onChange={onFilterChange}
             />
             Intermediate
@@ -157,7 +187,7 @@
             <input
               type="checkbox"
               value="advanced"
-              checked={selectedFilters.includes("advanced")}
+              checked={selectedFilter === "advanced"}
               onChange={onFilterChange}
             />
             Advanced
@@ -168,38 +198,13 @@
 
     function handleFilterChange(event) {
       const selectedFilter = event.target.value;
-      const rootElement = document.getElementById("root");
-    
-      const filterMapping = {
-        beginner: {
-          image: "images/Beginner.png",
-          title: "White just moved their bishop to b4. How can you take advantage of this mistake?"
-        },
-        intermediate: {
-          image: "images/Intermediate.png",
-          title: "Black is threatening Qxc1+. What would you do?"
-        },
-        advanced: {
-          image: "images/Advanced.png",
-          title: "Black’s queen is threatening to capture your rook on a7. How will you respond?"
-        }
-      };
-    
-      const {image, title} = filterMapping[selectedFilter];
-    
-      const imageElement = document.createElement("img");
-      imageElement.src = image;
-    
-      const titleElement = document.createElement("h2");
-      titleElement.textContent = title;
-    
-      const puzzleContainer = document.createElement("div");
-      puzzleContainer.classList.add("puzzle-container");
-      puzzleContainer.appendChild(imageElement);
-      puzzleContainer.appendChild(titleElement);
-    
-      rootElement.innerHTML = "";
-      rootElement.appendChild(puzzleContainer);
+      ReactDOM.render(
+        <React.Fragment>
+          <Filters selectedFilter={selectedFilter} onFilterChange={handleFilterChange} />
+          <PuzzleContainer selectedFilter={selectedFilter} />
+        </React.Fragment>,
+        document.getElementById("root")
+      );
     }
 
     function Nav() {
@@ -244,11 +249,12 @@
     }
 
     ReactDOM.render(
-      <>
-        <Filters selectedFilters={[]} onFilterChange={handleFilterChange} />
+      <React.Fragment>
+        <Filters selectedFilter={null} onFilterChange={handleFilterChange} />
         <Nav />
-      </>,
-      document.getElementById('root')
+        <PuzzleContainer selectedFilter={null} />
+      </React.Fragment>,
+      document.getElementById("root")
     );
   </script>
 </body>
