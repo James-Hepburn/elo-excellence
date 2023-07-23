@@ -127,6 +127,20 @@
     .sub-text {
       font-size: 1vw;
     }
+
+    .map-container {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      max-width: 300px; 
+      margin: 0 auto;
+      margin-top: 20px; 
+    }
+    
+    .map-container img {
+      max-width: 100%;
+      max-height: 100%;
+    }
   </style>
 </head>
 <body>
@@ -144,7 +158,9 @@
     </form>
   </div>
 
-  <img src="images/Map.png" alt="Map" />
+  <div class="map-container">
+    <img src="images/Map.png" alt="Map" />
+  </div>
 
   <div class="main-text">Elo Excellence</div>
   <div class="sub-text">277 Elgin St, Ottawa, ON, K2P 0H7</div>
