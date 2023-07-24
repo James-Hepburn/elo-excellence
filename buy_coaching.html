@@ -144,7 +144,7 @@
       <input type="text" placeholder="Card number" required/>
       <input type="text" placeholder="Expiration date (MM/YY)" required pattern="(0[1-9]|1[0-2])\/[0-9]{2}"/>
       <input type="text" placeholder="CVC" required pattern="[0-9]{3}"/>
-      <select name="day">
+      <select name="day" required>
         <option value="" selected disabled>Select Day</option>
         <option value="Monday">Monday</option>
         <option value="Tuesday">Tuesday</option>
@@ -154,7 +154,7 @@
         <option value="Saturday">Saturday</option>
         <option value="Sunday">Sunday</option>
       </select>
-      <input type="time" placeholder="Time of session" value="12:00" step="any"/>
+      <input type="time" placeholder="Time of session" value="12:00" required/>
       <input type="submit" value="Submit"/>
     </form>
   </div>
